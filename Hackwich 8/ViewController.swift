@@ -14,14 +14,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mylabel: UILabel!
     
+    @IBOutlet weak var textField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        mylabel.text = "My Segmented Control"
+        mylabel.text = ""
         
-        
+        segmentedControl.selectedSegmentIndex = -1
+
     }
 
     
@@ -29,10 +32,24 @@ class ViewController: UIViewController {
     {
         switch segmentedControl.selectedSegmentIndex
             {
-            case 0: mylabel.text = "First Segment has been selected"
+            case 0: 
+            if let userInput = textField.text
+            {
+                mylabel.text = userInput
+            }
             
-            case 1: mylabel.text = "Second Segment has been selected"
-               
+            case 1: 
+            if let userInput = textField.text
+            {
+                mylabel.text = userInput
+            }
+            
+            case 2:
+            if let userInput = textField.text
+            {
+                mylabel.text = userInput
+            }
+        
             default:break
         }
 
